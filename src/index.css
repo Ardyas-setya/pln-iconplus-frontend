@@ -4,6 +4,10 @@
 
 
 @font-face {
+  font-family: "inter-light";
+  src: url("./assets/fonts/Inter-Light.ttf");
+}
+@font-face {
   font-family: "inter-regular";
   src: url("./assets/fonts/Inter-Regular.ttf");
 }
