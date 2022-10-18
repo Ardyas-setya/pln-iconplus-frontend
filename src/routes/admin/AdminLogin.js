@@ -39,7 +39,7 @@ export default function AdminLogin() {
           </div>
           <Link to="/" className="text-xs text-purple-600 hover:underline">
             Forget Password?
-          </Link>
+          </Link> 
           <div className="mt-6">
             <button className="w-full px-4 py-2 tracking-wide text-white transition-colors  duration-200 transform bg-[#0096A7] rounded-md hover:bg-cyan-800 focus:outline-none focus:bg-cyan-600">
               Login
