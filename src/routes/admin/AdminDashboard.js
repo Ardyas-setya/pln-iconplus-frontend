@@ -3,8 +3,7 @@ import Sidebar from "./Sidebar";
 
 const AdminDashboard = () => {
   return (
-    <div className="flex ">
-      <Sidebar />
+    <div className="flex">
       <section className="flex-1">content left</section>
       <section className="flex-1 w-28">content right</section>
     </div>
