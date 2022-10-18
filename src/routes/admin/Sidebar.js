@@ -87,7 +87,6 @@ const Sidebar = () => {
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
           </div>
-
           <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
             <div
               className="absolute top-0 left-52 p-3"
@@ -115,7 +114,7 @@ const Sidebar = () => {
         </div>
       </nav>
       <style>{`
-      .hideMenuNav {
+      .hideMenuNav { 
         display: none;
       }
       .showMenuNav {
