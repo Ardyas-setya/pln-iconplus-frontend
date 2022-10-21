@@ -76,9 +76,9 @@ const data = [
 
 const Employee = () => {
   return (
-    <div className="p-5 w-full space-y-3">
-      <h1 className="text-black font-bold text-xl">USER DATA </h1>
-      <div className="space-y-2">
+    <div className="p-5 w-full space-y-5 mt-5">
+      <h1 className="text-black font-bold text-xl">User Data </h1>
+      <div className="space-y-3 ">
         <input
           type="text"
           placeholder="Cari Akun"
@@ -89,9 +89,9 @@ const Employee = () => {
           <AiOutlinePlus />
         </button>
 
-        <div className="overflow-x-auto w-full bg-white">
+        <div className=" w-full bg-white block max-h-96">
           <table className="table w-full bg-white">
-            <thead>
+            <thead className="sticky">
               <tr>
                 <th>
                   <label>
@@ -107,7 +107,7 @@ const Employee = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody className="">
+            <tbody className="h-96 overflow-y-auto">
               {data.map((item) => (
                 <tr>
                   <th>

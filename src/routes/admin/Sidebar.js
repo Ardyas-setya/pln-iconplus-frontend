@@ -4,6 +4,7 @@ import { IoMdContacts } from "react-icons/io";
 import Logo from "../../assets/images/logos/logo.png";
 import { BsGear, BsFolder } from "react-icons/bs";
 import { TbReportAnalytics } from "react-icons/tb";
+import { RiDashboardLine } from "react-icons/ri";
 
 const links = [
   {
@@ -12,7 +13,7 @@ const links = [
       {
         name: "Dashboard",
         nav: "admin/dashboard",
-        icon: "",
+        icon: <RiDashboardLine />,
       },
     ],
   },
@@ -60,85 +61,29 @@ const links = [
 ];
 
 const Sidebar = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
   return (
     <div className=" items-center justify-between border-r border-gray-200 shadow-md ">
-      <nav>
-        <section className="MOBILE-MENU flex lg:hidden">
-          <div
-            className="HAMBURGER-ICON space-y-2 m-4"
-            onClick={() => setIsNavOpen((prev) => !prev)}
-          >
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-          </div>
-          <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-            <div
-              className="absolute top-0 left-52 p-3"
-              onClick={() => setIsNavOpen(false)}
-            >
-              <svg
-                className="h-8 w-8 text-gray-600"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </div>
-            <Widebar />
-          </div>
-        </section>
-
-        <div className="DESKTOP-MENU hidden space-x-8 lg:flex">
-          <Widebar />
-        </div>
-      </nav>
-      <style>{`
-      .hideMenuNav { 
-        display: none;
-      }
-      .showMenuNav { 
-        display: block;
-        position: absolute;
-        width: 100%; 
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: none;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: left;
-      }
-    `}</style>
+      <Widebar />
     </div>
   );
 };
 
 const Widebar = () => {
-  const [currentColor, setCurrentColor] = useState("#03C9D7");
+  const [currentColor, setCurrentColor] = useState("#d1d5db");
 
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-black  text-md m-2";
   const normalLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300 m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md hover:text-white hover:bg-blueIconBasic active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300 m-2";
 
   return (
-    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-sky-100 w-56 px-2">
+    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-white w-56 px-2 ">
       <div className="flex items-center self-center justify-content-center">
         <Link
           to="/"
           className="self-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight text-slate-900"
         >
-          <img src={Logo} alt="icon+ logo" className="w-28 self-center "></img>
+          <img src={Logo} alt="icon+ logo" className="w-28 self-center  "></img>
         </Link>
       </div>
       <div className="mt-10 ">

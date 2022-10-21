@@ -5,49 +5,18 @@ import Sidebar from "./Sidebar";
 
 const AdminDashboard = () => {
   return (
-    <div className="flex flex-col space-y-4 p-5">
-      <h1 className="font-bold text-black">Manajemen Akun</h1>
-      {/* infografis atas */}
-      <div className="flex flex-row space-x-6">
-        <div className="card w-72 bg-white shadow-xl">
-          <div className="card-body flex-row space-x-3">
-            <div className="flex w-auto items-center ">
-              <h1 className="text-4xl font-bold text-black ">200</h1>
-            </div>
-
-            <div className="flex flex-col">
-              <h2 className="card-title text-black">Barang Masuk</h2>
-              <p>hari ini</p>
-            </div>
-          </div>
-        </div>
-        <div className="card w-72 bg-white shadow-xl">
-          <div className="card-body flex-row space-x-3">
-            <div className="flex w-auto items-center ">
-              <h1 className="text-4xl font-bold text-black ">200</h1>
-            </div>
-
-            <div className="flex flex-col">
-              <h2 className="card-title text-black">Barang Masuk</h2>
-              <p>hari ini</p>
-            </div>
-          </div>
-        </div>
-        <div className="card w-72 bg-white shadow-xl">
-          <div className="card-body flex-row space-x-3">
-            <div className="flex w-auto items-center ">
-              <h1 className="text-4xl font-bold text-black ">200</h1>
-            </div>
-
-            <div className="flex flex-col">
-              <h2 className="card-title text-black">Barang Masuk</h2>
-              <p>hari ini</p>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-row w-full space-x-8 p-6 h-full">
+      <div className="grow  h-full ">
+        <h1 className="font-bold text-black">Dashboard</h1>
+        <div></div>
       </div>
-      <div className="card w-72 bg-white shadow-xl">
-        <div className="card-body flex-row space-x-3"></div>
+      <div className="space-y-6">
+        <div className="flex-none card w-72 bg-white shadow-xl h-full ">
+          <div className="card-body flex-row space-x-3 h-72"></div>
+        </div>
+        <div className="grow card w-72 bg-white shadow-xl ">
+          <div className="card-body flex-row space-x-3 "></div>
+        </div>
       </div>
     </div>
   );

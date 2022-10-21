@@ -7,11 +7,12 @@ module.exports = {
       inter: ["inter-regular", "Inter-Regular"],
       interBold: ["inter-bold", "Inter-bold"],
     },
-    // colors: {
-    //   blueIconBasic: "#0096A7",
-    //   navy: "#182657",
-    // },
-    extend: {},
+    extend: {
+      colors: {
+        blueIconBasic: "#0096A7",
+        navy: "#182657",
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {

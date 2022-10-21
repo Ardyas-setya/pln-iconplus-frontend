@@ -16,7 +16,7 @@ function App() {
       <Fragment>
         <div className="flex flex-row bg-sky-50">
           <Sidebar />
-          <div className="w-full">
+          <div className="w-full h-full">
             {/* <Navbar /> */}
             <Routes>
               <Route
