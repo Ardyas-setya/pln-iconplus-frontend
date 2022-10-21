@@ -30,11 +30,21 @@ const initialState = {
 
 const links = [
   {
+    title: "",
+    links: [
+      {
+        name: "Dashboard",
+        nav: "admin/dashboard",
+        icon: "",
+      },
+    ],
+  },
+  {
     title: "Admin",
     links: [
       {
         name: "Manajemen akun",
-        nav: "admin/dashboard",
+        nav: "admin/akun",
         icon: <BsGear />,
       },
       {
@@ -76,7 +86,7 @@ const Sidebar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-between border-b border-gray-400 ">
+    <div className="flex items-center justify-between border-r border-gray-200 shadow-md ">
       <nav>
         <section className="MOBILE-MENU flex lg:hidden">
           <div
@@ -137,68 +147,47 @@ const Sidebar = () => {
 };
 
 const Widebar = () => {
-  const [screenSize, setScreenSize] = useState(undefined);
   const [currentColor, setCurrentColor] = useState("#03C9D7");
-  // const [currentMode, setCurrentMode] = useState("Light");
-  // const [themeSettings, setThemeSettings] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(true);
-  // const [isClicked, setIsClicked] = useState(initialState);
-
-  const handleCloseSideBar = () => {
-    if (activeMenu !== undefined && screenSize <= 900) {
-      setActiveMenu(false);
-    }
-  };
 
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2";
   const normalLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md  hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300 m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300 m-2";
 
   return (
-    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-sky-100 w-64 px-2">
-      {activeMenu && (
-        <>
-          <div className="flex items-center self-center justify-content-center">
-            <Link
-              to="/"
-              onClick={handleCloseSideBar}
-              className="self-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight text-slate-900"
-            >
-              <img
-                src={Logo}
-                alt="icon+ logo"
-                className="w-28 self-center "
-              ></img>
-            </Link>
-          </div>
-          <div className="mt-10 ">
-            {links.map((item) => (
-              <div key={item.title}>
-                <p className="text-black-400 font-medium text-xs m-3 mt-4 uppercase">
-                  {item.title}
-                </p>
-                {item.links.map((link) => (
-                  <NavLink
-                    to={`/${link.nav}`}
-                    key={link.name}
-                    onClick={handleCloseSideBar}
-                    style={({ isActive }) => ({
-                      backgroundColor: isActive ? currentColor : "",
-                    })}
-                    className={({ isActive }) =>
-                      isActive ? activeLink : normalLink
-                    }
-                  >
-                    {link.icon}
-                    <span className="capitalize ">{link.name}</span>
-                  </NavLink>
-                ))}
-              </div>
+    <div className="h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 bg-sky-100 w-56 px-2">
+      <div className="flex items-center self-center justify-content-center">
+        <Link
+          to="/"
+          className="self-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight text-slate-900"
+        >
+          <img src={Logo} alt="icon+ logo" className="w-28 self-center "></img>
+        </Link>
+      </div>
+      <div className="mt-10 ">
+        {links.map((item) => (
+          <div key={item.title}>
+            <p className="text-black-400 font-medium text-xs m-3 mt-4 uppercase">
+              {item.title}
+            </p>
+            {item.links.map((link) => (
+              <NavLink
+                to={`/${link.nav}`}
+                key={link.name}
+                style={({ isActive }) => ({
+                  backgroundColor: isActive ? currentColor : "",
+                })}
+                className={({ isActive }) =>
+                  isActive ? activeLink : normalLink
+                }
+              >
+                {link.icon}
+                <span className="capitalize ">{link.name}</span>
+              </NavLink>
             ))}
           </div>
-        </>
-      )}
+        ))}
+      </div>
     </div>
   );
 };
