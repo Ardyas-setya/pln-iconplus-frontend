@@ -76,7 +76,7 @@ const Sidebar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-between border-b border-gray-400 ">
+    <div className="flex items-center border-b border-1 border-gray-400 ">
       <nav>
         <section className="MOBILE-MENU flex lg:hidden">
           <div
