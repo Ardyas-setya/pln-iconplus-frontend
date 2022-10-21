@@ -1,156 +1,113 @@
+import DataTable from "react-data-table-component";
 import React from "react";
-import { AiOutlinePlus } from "react-icons/ai";
+import { BsTrash } from "react-icons/bs";
+import { BsPencil } from "react-icons/bs";
+const columns = [
+  {
+    name: "Title",
+    selector: (row) => row.title,
+  },
+  {
+    name: "Year",
+    selector: (row) => row.year,
+  },
 
-const data = [
   {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
+    cell: (row) => (
+      <button id={row.ID}>
+        <BsPencil color="green"></BsPencil>
+      </button>
+    ),
+    ignoreRowClick: true,
+    allowOverflow: true,
+    button: true,
   },
   {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
-  },
-  {
-    nama: "ardyas setya",
-    rules: "karyawan",
-    email: "ardyas@gmail.com",
-    telp: "098765123123",
-    status: "aktif",
+    cell: (row) => (
+      <button id={row.ID}>
+        <BsTrash color="red"></BsTrash>
+      </button>
+    ),
+    ignoreRowClick: true,
+    allowOverflow: true,
+    button: true,
   },
 ];
 
-const Employee = () => {
-  return (
-    <div className="p-5 w-full space-y-5 mt-5">
-      <h1 className="text-black font-bold text-xl">User Data </h1>
-      <div className="space-y-3 ">
-        <input
-          type="text"
-          placeholder="Cari Akun"
-          className="input bg-white input-bordered w-full "
-        />
-        <button class="btn gap-2 bg-cyan-500 text-white btn-outline">
-          Tambah Akun
-          <AiOutlinePlus />
-        </button>
+const data = [
+  {
+    id: 1,
+    title: "Beetlejuice",
+    year: "1988",
+  },
+  {
+    id: 2,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 3,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 4,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 5,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 6,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 7,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 8,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 9,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+  {
+    id: 10,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+];
 
-        <div className=" w-full bg-white block max-h-96">
-          <table className="table w-full bg-white">
-            <thead className="sticky">
-              <tr>
-                <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th>
-                <th>Name</th>
-                <th>Rules</th>
-                <th>Email</th>
-                <th>Telp</th>
-                <th>Status</th>
-                <th>Action</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody className="h-96 overflow-y-auto">
-              {data.map((item) => (
-                <tr>
-                  <th>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
-                    </label>
-                  </th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img
-                            src="/tailwind-css-component-profile-2@56w.png"
-                            alt="Avatar Tailwind CSS Component"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-bold">{item.nama}</div>
-                        <div className="text-sm opacity-50">United States</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>{item.rules}</td>
-                  <td>{item.email}</td>
-                  <td>{item.telp}</td>
-                  <td>
-                    <span className="badge badge-ghost badge-sm">
-                      {item.status}
-                    </span>
-                  </td>
-                  <th>
-                    <button className="btn btn-ghost btn-xs">Hapus</button>
-                    <button className="btn btn-ghost btn-xs">Edit</button>
-                  </th>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+export default function Employee() {
+  // const actionsMemo = React.useMemo(
+  //   () => <Export onExport={() => downloadCSV(data)} />,
+  //   []
+  // );
+  const buttonAlert = () => {
+    alert("Test");
+  };
+
+  return (
+    <div className="m-5 p-5 rounded-md">
+      <DataTable
+        columns={columns}
+        data={data}
+        selectableRows
+        pagination
+        title="User List"
+        fixedHeader
+        fixedHeaderScrollHeight="500px"
+        actions={buttonAlert}
+      />
     </div>
   );
-};
-
-export default Employee;
+}
