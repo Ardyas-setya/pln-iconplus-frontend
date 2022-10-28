@@ -1,4 +1,4 @@
-import React, { Fragment, Switch } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdminDashboard from "./routes/admin/AdminDashboard";
 import AdminLogin from "./routes/admin/AdminLogin";
@@ -14,10 +14,10 @@ function App() {
         <Route path="/admin/login" element={<AdminLogin />}></Route>
       </Routes>
       <Fragment>
-        <div className="flex flex-row bg-sky-50">
-          <Sidebar />
-          <div className="w-full h-full">
-            {/* <Navbar /> */}
+        <div className="bg-sky-50">
+          {/* <Sidebar /> */}
+          <Navbar />
+          <div className="w-screen h-screen">
             <Routes>
               <Route
                 path="/admin/dashboard"
